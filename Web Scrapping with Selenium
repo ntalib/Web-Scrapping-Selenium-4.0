@@ -1,0 +1,13 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options #the latest selenium update uses Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By # able search with parameters
+from selenium.webdriver.support.ui import WebDriverWait # allow waiting for page to load
+from selenium.webdriver.support import expected_conditions as EC # determine whether the web page has loaded
+
+options = Options()
+options.add_argument("start-maximized")
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver.get("https://www.google.com") #add website in between the ""
